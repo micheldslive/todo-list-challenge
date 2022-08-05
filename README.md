@@ -37,6 +37,8 @@ Esse projeto foi desenvolvido com a seguinte tecnologia e suas dependencias:
     - react-hook-form
     - react-toastify
     - react-icons
+    - framer-motion
+    - typescript
 
 ## ▶️ Executando o projeto (Local)
 
