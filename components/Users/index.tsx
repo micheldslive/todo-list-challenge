@@ -3,6 +3,7 @@ import { useTodoList } from "context"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { filterValues } from "utils/filterValues"
+import { MotionAnimated } from "utils/motionAnimated"
 
 export const Users = () => {
   const { users, filtered, getAllUsers } = useTodoList()
@@ -20,9 +21,8 @@ export const Users = () => {
   }, [])
 
   return (
-    <>
+    <MotionAnimated>
       <Title>Select a user</Title>
-
       <div className="rounded-2xl overflow-x-auto relative shadow-md animate-fadeIn">
         <div className="w-full text-sm text-left text-gray-500">
           <div className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -48,6 +48,6 @@ export const Users = () => {
           ))}
         </div>
       </div>
-    </>
+    </MotionAnimated>
   )
 }
