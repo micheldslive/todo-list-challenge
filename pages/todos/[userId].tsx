@@ -8,6 +8,7 @@ import { useRouter } from "next/router"
 import { Fragment, useEffect } from "react"
 import { Template } from "template"
 import { filterValues } from "utils/filterValues"
+import { MotionAnimated } from "utils/motionAnimated"
 
 function Todos() {
   const { todos, filtered, getTodosByUser } = useTodoList()
@@ -22,15 +23,17 @@ function Todos() {
   return (
     <Template>
       <Title>Hello {userName}! wellcome to your List!</Title>
-      <div className="grid grid-cols-4 gap-4 lg:grid-cols-3 hd:grid-cols-2 sm:grid-cols-1 py-2 px-4 w-full">
-        {todos.map(({id, title, completed}) =>
-          filterValues(title, filtered) && (
-            <Fragment key={id}>
-              <ToDoCard id={id} title={title} completed={completed} />
-            </Fragment>
-          )
-        )}
-      </div>
+      <MotionAnimated>
+        <div className="grid grid-cols-4 gap-4 lg:grid-cols-3 hd:grid-cols-2 sm:grid-cols-1 py-2 px-4 w-full">
+          {todos.map(({ id, title, completed }) =>
+            filterValues(title, filtered) && (
+              <Fragment key={id}>
+                <ToDoCard id={id} title={title} completed={completed} />
+              </Fragment>
+            )
+          )}
+        </div>
+      </MotionAnimated>
       <OpenModal>Add ToDo</OpenModal>
       <Modal title="Create ToDo">
         <Register />

@@ -2,6 +2,7 @@ import classNames from "classnames"
 import { DeleteButton } from "components"
 import { useTodoList } from "context"
 import { ITodosList } from "core/types"
+import { MotionAnimated } from "utils/motionAnimated"
 
 export const ToDoCard = ({ id, title, completed }: ITodosList) => {
   const { patchToDosList } = useTodoList()
@@ -11,7 +12,7 @@ export const ToDoCard = ({ id, title, completed }: ITodosList) => {
   }
 
   return (
-    <div key={id} className="relative animate-fadeIn">
+    <div className="relative">
       <DeleteButton id={id} />
       <input
         className="toDo"
