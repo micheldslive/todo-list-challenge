@@ -1,9 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+main {
+  min-height: 800px;
+  background-color: #fafafa;
 }
 
 a {
@@ -15,12 +26,122 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  body {
-    color: white;
-    background: black;
+
+  100% {
+    opacity: 1;
   }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .socialLink {
+    margin-top: 50px;
+  }
+}
+
+
+/* Checkbox effect */
+
+input[type="checkbox"].toDo { display: none; }
+
+input[type="checkbox"].toDo + label.toDo {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  font: 14px/20px 'Open Sans', Arial, sans-serif;
+  color: #ddd;
+  cursor: pointer
+}
+
+input[type="checkbox"].toDo + label.toDo:last-child { margin-bottom: 0; }
+
+input[type="checkbox"].toDo + label.toDo:before,
+input[type="checkbox"].toDo + label.toDo:after {
+  content: '';
+  display: block;
+  position: absolute;
+  -webkit-transition: all .12s, border-color .08s;
+  transition: all .12s, border-color .08s;
+}
+
+input[type="checkbox"].toDo + label.toDo:before {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #009FE3;
+  border-radius: 14px;
+  left: 40px;
+  top: 0px;
+}
+
+input[type="checkbox"].toDo + label.toDo:after {
+  width: 50px;
+  height: 50px;
+  left: 8px;
+  top: 5px;
+}
+
+input[type="checkbox"].toDo:checked + label.toDo:after {
+  width: 20px;
+  left: 58px;
+  top: -20px;
+  border-radius: 0;
+  border: 6px solid #D8308A;
+  opacity: 1;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.modal-content {
+  height: fit-content;
+}
+
+.modal-register {
+  transition: 0.5s;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal-register.active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
