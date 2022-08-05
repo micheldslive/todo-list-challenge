@@ -1,5 +1,6 @@
 import { Title } from "components"
 import { contacts } from "mocks"
+import { memo } from "react"
 import { Template } from "template"
 import { MotionAnimated } from "utils/motionAnimated"
 
@@ -28,4 +29,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default memo(Contact)
