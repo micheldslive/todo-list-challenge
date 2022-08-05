@@ -9,7 +9,7 @@ import {
 import { createContext, useContext, useState } from "react"
 import { deleteValue } from "utils/deleteValues"
 
-const defaultList: IToDoListContext = {
+const defaultTodoList: IToDoListContext = {
   openModal: false,
   setOpenModal: () => false,
   users: [],
@@ -25,7 +25,7 @@ const defaultList: IToDoListContext = {
   createToDoList: async () => undefined,
 }
 
-const ToDoListContext = createContext(defaultList)
+const ToDoListContext = createContext(defaultTodoList)
 
 export const useTodoList = () => useContext(ToDoListContext)
 

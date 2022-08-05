@@ -8,8 +8,8 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 main {
@@ -46,34 +46,6 @@ a {
     opacity: 0;
   }
 }
-
-@keyframes fromLeft {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes toRight {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-
-@media screen and (max-width: 767px) {
-  .socialLink {
-    margin-top: 50px;
-  }
-}
-
 
 /* Checkbox effect */
 

@@ -1,7 +1,7 @@
-import Metas from "layout";
-import Header from "components/Header";
-import Footer from "components/Footer";
-import { IChildren } from "core/types";
+import Metas from "layout"
+import Header from "components/Header"
+import Footer from "components/Footer"
+import { IChildren } from "core/types"
 
 export const Template = ({ children }: IChildren) => {
   return (
@@ -15,5 +15,5 @@ export const Template = ({ children }: IChildren) => {
       </main>
       <Footer />
     </>
-  );
-};
+  )
+}
