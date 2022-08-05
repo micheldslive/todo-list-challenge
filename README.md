@@ -13,12 +13,13 @@
 ---
 
 ## Projeto
+
 <p align="center">
   <img src="https://github.com/micheldslive/todo-list-challenge/blob/main/assets/images/demo.gif">
 </p>
 
-<h4 align="center"><a href="https://mi-code.vercel.app/">Clique aqui para ver o projeto.</a></h4>
-
+<h4 align="center">Projeto (vercel)<a href="https://todo-list-em.vercel.app/">Clique aqui para ver o projeto.</a></h4>
+<h4 align="center">Protótipo (figma): <a href="https://www.figma.com/file/0gXCmFvQTBqqqionFgcS1g/Todo-List-Challenge?node-id=0%3A1">https://www.figma.com/file/0gXCmFvQTBqqqionFgcS1g/Todo-List-Challenge?node-id=0%3A1.</a></h4>
 ---
 
 ## Tecnologias utilizadas
