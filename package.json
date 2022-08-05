@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "docker": "npm run next-server",
     "build": "next build",
     "start": "next start",
     "lint": "npx next lint --fix"
