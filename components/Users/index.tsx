@@ -6,8 +6,12 @@ import { filterValues } from "utils/filterValues"
 import { MotionAnimated } from "utils/motionAnimated"
 
 export const Users = () => {
-  const { users, filtered, getAllUsers } = useTodoList()
+  const { users, search, getAllUsers } = useTodoList()
   const router = useRouter()
+
+  const filtered = users.filter(({ name }) => name.toLocaleLowerCase().includes(search))
+
+  console.log(filtered)
 
   const handleClick = (id: number, name: string) => {
     router.push({
@@ -32,20 +36,22 @@ export const Users = () => {
             </div>
           </div>
 
-          {users?.map(({ id, name, website }) => (
+          {filtered.length ? filtered.map(({ id, name, website }) => (
             <div onClick={() => handleClick(id, name)} key={id}>
-              {filterValues(name, filtered) ? (
-                <div className="flex items-center justify-between bg-white border-b hover:bg-gray-50 cursor-pointer">
-                  <span className="py-4 px-6 font-medium text-gray-900">
-                    {name}
-                  </span>
-                  <span className="py-4 px-6">{website}</span>
-                </div>
-              ) : (
-                ""
-              )}
+              <div className="flex items-center justify-between bg-white border-b hover:bg-gray-50 cursor-pointer">
+                <span className="py-4 px-6 font-medium text-gray-900">
+                  {name}
+                </span>
+                <span className="py-4 px-6">{website}</span>
+              </div>
             </div>
-          ))}
+          )) :
+          <div className="flex items-center justify-between bg-white border-b hover:bg-gray-50 cursor-pointer">
+            <span className="py-4 px-6 text-gray-900">
+              no search results found
+            </span>
+          </div>
+          }
         </div>
       </div>
     </MotionAnimated>

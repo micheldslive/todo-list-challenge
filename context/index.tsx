@@ -15,8 +15,7 @@ const defaultTodoList: IToDoListContext = {
   users: [],
   todos: [],
   setTodos: () => [],
-  filtered: "",
-  setFiltered: () => "",
+  search: "",
   getAllUsers: async () => undefined,
   getTodosByUser: async () => undefined,
   filterList: () => null,
@@ -33,7 +32,7 @@ export const TodoListProvider = ({ children }: IChildren) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
   const [users, setUsers] = useState<IListUsers[]>([])
   const [todos, setTodos] = useState<ITodosList[]>([])
-  const [filtered, setFiltered] = useState<string>("")
+  const [search, setSearch] = useState<string>("")
 
   const getAllUsers = async () => {
     const { ListUsers } = ToDoListAPI()
@@ -90,8 +89,8 @@ export const TodoListProvider = ({ children }: IChildren) => {
     }
   }
 
-  const filterList = (filtered: string) => {
-    setFiltered(filtered.toLocaleLowerCase())
+  const filterList = (value: string) => {
+    setSearch(value.toLocaleLowerCase())
   }
 
   return (
@@ -102,8 +101,7 @@ export const TodoListProvider = ({ children }: IChildren) => {
         users,
         todos,
         setTodos,
-        filtered,
-        setFiltered,
+        search,
         getAllUsers,
         getTodosByUser,
         filterList,
