@@ -26,19 +26,19 @@
 ---
 
 ## Tecnologias utilizadas
-Esse projeto foi desenvolvido com a seguinte tecnologia e suas dependencias:
+Esse projeto foi desenvolvido com a seguintes tecnologias:
 
 - Nextjs
-    - axios
-    - classnames
-    - react-typed
-    - taiwindCSS
-    - docker
-    - react-hook-form
-    - react-toastify
-    - react-icons
-    - framer-motion
-    - typescript
+- axios
+- classnames
+- react-typed
+- taiwindCSS
+- docker
+- react-hook-form
+- react-toastify
+- react-icons
+- framer-motion
+- typescript
 
 ## ▶️ Executando o projeto (Local)
 
