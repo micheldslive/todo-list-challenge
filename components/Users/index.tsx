@@ -2,7 +2,6 @@ import { Title } from "components"
 import { useTodoList } from "context"
 import { useRouter } from "next/router"
 import { useEffect } from "react"
-import { filterValues } from "utils/filterValues"
 import { MotionAnimated } from "utils/motionAnimated"
 
 export const Users = () => {
