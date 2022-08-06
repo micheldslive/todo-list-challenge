@@ -1,5 +1,5 @@
 import { toast } from "react-toastify"
-import { ToDoListAPI } from "core/api/ToDoListAPI"
+import { ToDoListAPI } from "core/api/Api"
 import {
   IChildren,
   IUsersList,
