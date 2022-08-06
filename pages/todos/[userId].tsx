@@ -7,14 +7,17 @@ import { useTodoList } from "context"
 import { useRouter } from "next/router"
 import { Fragment, useEffect } from "react"
 import { Template } from "template"
-import { filterValues } from "utils/filterValues"
 import { MotionAnimated } from "utils/motionAnimated"
 
 function Todos() {
-  const { todos, filtered, getTodosByUser } = useTodoList()
+  const { todos, search, getTodosByUser } = useTodoList()
   const router = useRouter()
   const userId = Number(router.query.userId)
   const userName = String(router.query.name)
+
+  const filtered = todos.filter(({ title }) =>
+    title.toLocaleLowerCase().includes(search)
+  )
 
   useEffect(() => {
     userId && getTodosByUser(userId)
@@ -25,13 +28,14 @@ function Todos() {
       <Title>Hello {userName}! wellcome to your List!</Title>
       <MotionAnimated>
         <div className="grid grid-cols-4 gap-4 lg:grid-cols-3 hd:grid-cols-2 sm:grid-cols-1 py-2 px-4 w-full">
-          {todos.map(({ id, title, completed }) =>
-            filterValues(title, filtered) && (
-              <Fragment key={id}>
-                <ToDoCard id={id} title={title} completed={completed} />
-              </Fragment>
-            )
-          )}
+          {filtered.length ? filtered.map(({ id, title, completed }) => (
+            <Fragment key={id}>
+              <ToDoCard id={id} title={title} completed={completed} />
+            </Fragment>
+          ))
+          :
+            <span>no cards found in search</span>
+          }
         </div>
       </MotionAnimated>
       <OpenModal>Add ToDo</OpenModal>

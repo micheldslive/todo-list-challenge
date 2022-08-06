@@ -14,8 +14,7 @@ export interface IToDoListContext {
   users: IListUsers[]
   todos: ITodosList[]
   setTodos: Dispatch<SetStateAction<ITodosList[]>>
-  filtered: string
-  setFiltered: Dispatch<SetStateAction<string>>
+  search: string
   getAllUsers: () => Promise<void>
   getTodosByUser: (userId: number) => Promise<void>
   filterList: (filtered: string) => void
