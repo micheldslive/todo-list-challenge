@@ -11,7 +11,7 @@ export interface IMainProps extends IChildren {
 export interface IToDoListContext {
   openModal: boolean
   setOpenModal: Dispatch<SetStateAction<boolean>>
-  users: IListUsers[]
+  users: IUsersList[]
   todos: ITodosList[]
   setTodos: Dispatch<SetStateAction<ITodosList[]>>
   search: string
@@ -27,22 +27,18 @@ export interface IToDoListResponse {
   data: ITodosList[]
   status: number
 }
-
-export interface IFilterList extends IListUsers, ITodosList {
-}
-
-export interface IListUsers {
+export interface IUsersList {
   id: number
   name: string
   username: string
   email: string
-  address: IListUsersAdress
+  address: IUsersListAdress
   phone: string
   website: string
-  company: IListUsersCompany
+  company: IUsersListCompany
 }
 
-export interface IListUsersAdress {
+export interface IUsersListAdress {
   street: string
   suite: string
   city: string
@@ -53,7 +49,7 @@ export interface IListUsersAdress {
   }
 }
 
-export interface IListUsersCompany {
+export interface IUsersListCompany {
   name: string
   catchPhrase: string
   bs: string

@@ -1,14 +1,13 @@
 import { Title } from "components"
 import { contacts } from "mocks"
 import { memo } from "react"
-import { Template } from "template"
 import { MotionAnimated } from "utils/motionAnimated"
 
 function Contact() {
   const { name, networks } = contacts
 
   return (
-    <Template>
+    <>
       <Title>Contact-me</Title>
       <MotionAnimated>
         <div className="max-w-sm rounded overflow-hidden shadow-lg h-40 smd:w-96 bg-white">
@@ -25,7 +24,7 @@ function Contact() {
           </div>
         </div>
       </MotionAnimated>
-    </Template>
+    </>
   )
 }
 

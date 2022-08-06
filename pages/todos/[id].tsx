@@ -1,30 +1,23 @@
-import { Title } from "components"
-import { Modal } from "components"
-import { OpenModal } from "components"
-import { Register } from "components"
-import { ToDoCard } from "components"
 import { useTodoList } from "context"
 import { useRouter } from "next/router"
 import { Fragment, useEffect } from "react"
-import { Template } from "template"
+import { filteringTodos } from "utils/filteringArray"
 import { MotionAnimated } from "utils/motionAnimated"
+import { Title, Modal, OpenModal, Register, ToDoCard } from "components"
 
 function Todos() {
   const { todos, search, getTodosByUser } = useTodoList()
   const router = useRouter()
-  const userId = Number(router.query.userId)
+  const userId = Number(router.query.id)
   const userName = String(router.query.name)
-
-  const filtered = todos.filter(({ title }) =>
-    title.toLocaleLowerCase().includes(search)
-  )
+  const filtered = filteringTodos(todos, search)
 
   useEffect(() => {
     userId && getTodosByUser(userId)
   }, [userId])
 
   return (
-    <Template>
+    <>
       <Title>Hello {userName}! wellcome to your List!</Title>
       <MotionAnimated>
         <div className="grid grid-cols-4 gap-4 lg:grid-cols-3 hd:grid-cols-2 sm:grid-cols-1 py-2 px-4 w-full">
@@ -42,7 +35,7 @@ function Todos() {
       <Modal title="Create ToDo">
         <Register />
       </Modal>
-    </Template>
+    </>
   )
 }
 

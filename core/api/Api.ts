@@ -1,13 +1,14 @@
-import axios from "axios"
-import { IListUsers, IToDoListResponse, ITodosList } from "core/types"
+import axios from "axios";
+import { IUsersList, IToDoListResponse, ITodosList } from "core/types"
 import { ErrorHandler } from "core/handler/errorHanlder"
 
 export const ToDoListAPI = () => {
+
   const api = axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
-  })
+  });
 
-  const ListUsers = async (): Promise<IListUsers[]> => {
+  const ListUsers = async (): Promise<IUsersList[]> => {
     const { errorHandler } = new ErrorHandler()
     const [error, response] = await errorHandler(api.get(`/users`))
     if (error) throw new Error(error.message)
