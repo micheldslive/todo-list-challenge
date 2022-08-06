@@ -1,8 +1,8 @@
 import { toast } from "react-toastify"
-import { ToDoListAPI } from "core/api/Api"
+import { ToDoListAPI } from "core/api/ToDoListAPI"
 import {
   IChildren,
-  IListUsers,
+  IUsersList,
   IToDoListContext,
   ITodosList,
 } from "core/types"
@@ -30,7 +30,7 @@ export const useTodoList = () => useContext(ToDoListContext)
 
 export const TodoListProvider = ({ children }: IChildren) => {
   const [openModal, setOpenModal] = useState<boolean>(false)
-  const [users, setUsers] = useState<IListUsers[]>([])
+  const [users, setUsers] = useState<IUsersList[]>([])
   const [todos, setTodos] = useState<ITodosList[]>([])
   const [search, setSearch] = useState<string>("")
 

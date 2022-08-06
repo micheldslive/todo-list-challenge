@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 export const MotionAnimated = ({ children }: IChildren) => {
   return (
     <motion.div
-      className="animate-fadeIn"
+      className="animate-fadeIn w-full"
       transition={{
         y: {
           duration: 0.5,

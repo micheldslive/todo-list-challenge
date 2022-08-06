@@ -1,12 +1,7 @@
 import { Error404 } from "components"
-import { Template } from "template"
 
 const Custom404 = () => {
-  return (
-    <Template>
-      <Error404 />
-    </Template>
-  )
+  return <Error404 />
 }
 
 export default Custom404
