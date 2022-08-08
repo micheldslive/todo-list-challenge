@@ -1,12 +1,12 @@
-import { useTodoList } from "context"
-import { IChildren } from "core/types"
+import { useTodoList } from 'context'
+import { IChildren } from 'core/types'
 
-export const OpenModal = ({ children}: IChildren) => {
+export const OpenModal = ({ children }: IChildren) => {
   const { setOpenModal } = useTodoList()
 
   return (
     <button
-      className={`bg-primary text-white text-white font-bold py-2 px-4 mt-8 mb-8 rounded hover:opacity-90`}
+      className={`my-8 rounded bg-primary py-2 px-4 font-bold text-white hover:opacity-90`}
       onClick={() => setOpenModal(true)}
     >
       {children}

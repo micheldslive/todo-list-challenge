@@ -1,8 +1,8 @@
-import { IChildren } from "core/types"
+import { IChildren } from 'core/types'
 
 export const Title = ({ children }: IChildren) => {
   return (
-    <h1 className="sm:text-3xl my-10 font-arial text-center text-4xl text-black animate-fadeIn">
+    <h1 className="my-10 animate-fadeIn text-center font-arial text-4xl text-black sm:text-3xl">
       {children}
     </h1>
   )

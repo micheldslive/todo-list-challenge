@@ -1,9 +1,10 @@
-import type { AppProps } from "next/app"
-import { TodoListProvider } from "context"
-import { Toast } from "components"
-import { Template } from "template"
-import "styles/globals.css"
-import "react-toastify/dist/ReactToastify.css"
+import 'styles/globals.css'
+import 'react-toastify/dist/ReactToastify.css'
+
+import { Toast } from 'components/Toast'
+import { TodoListProvider } from 'context'
+import type { AppProps } from 'next/app'
+import { Template } from 'template'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
