@@ -1,4 +1,4 @@
-import { Title } from 'components'
+import { Title } from 'components/Title'
 import { MotionAnimated } from 'utils/motionAnimated'
 
 export const Error404 = () => {
