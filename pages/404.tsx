@@ -1,4 +1,4 @@
-import { Error404 } from "components"
+import { Error404 } from 'components/404'
 
 const Custom404 = () => {
   return <Error404 />

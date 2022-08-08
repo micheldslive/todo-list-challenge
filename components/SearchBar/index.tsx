@@ -1,5 +1,5 @@
-import { useTodoList } from "context"
-import { FiSearch } from "react-icons/fi"
+import { useTodoList } from 'context'
+import { FiSearch } from 'react-icons/fi'
 
 export const SearchBar = () => {
   const { filterList, search } = useTodoList()
@@ -9,20 +9,18 @@ export const SearchBar = () => {
   }
 
   return (
-    <div className="sm:w-full smd:w-96 flex flex-row items-center justify-center">
+    <div className="flex flex-row items-center justify-center smd:w-96 sm:w-full">
       <div className="flex">
         <div className="relative">
           <input
             type="search"
-            className="smd:w-96 md:w-60 p-2.5 z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
+            className="z-20 rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 md:w-60 smd:w-96"
             placeholder="Search..."
             value={search}
             required
             onChange={(e) => handleFilterList(e.currentTarget.value)}
           />
-          <span
-            className="absolute top-0 right-0 p-2.5 text-sm bg-secondary border-secondary font-medium text-white rounded-r-lg border"
-          >
+          <span className="absolute top-0 right-0 rounded-r-lg border border-secondary bg-secondary p-2.5 text-sm font-medium text-white">
             <FiSearch size={20} />
           </span>
         </div>

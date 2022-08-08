@@ -1,7 +1,7 @@
-import { Title } from "components"
-import { contacts } from "mocks"
-import { memo } from "react"
-import { MotionAnimated } from "utils/motionAnimated"
+import { Title } from 'components/Title'
+import { contacts } from 'mocks'
+import { memo } from 'react'
+import { MotionAnimated } from 'utils/motionAnimated'
 
 function Contact() {
   const { name, networks } = contacts
@@ -10,13 +10,13 @@ function Contact() {
     <>
       <Title>Contact-me</Title>
       <MotionAnimated>
-        <div className="max-w-sm rounded overflow-hidden shadow-lg h-40 smd:w-96 bg-white">
+        <div className="h-40 max-w-sm overflow-hidden rounded bg-white shadow-lg smd:w-96">
           <div className="px-6 py-4">
-            <p className="font-bold text-xl mb-2">{name}</p>
+            <p className="mb-2 text-xl font-bold">{name}</p>
             <br />
             {networks.map(({ title, href }) => (
-              <p className="text-gray-700 text-base">
-                <a href={href} target="_blank">
+              <p className="text-base text-gray-700" key={title}>
+                <a href={href} target="_blank" rel="noreferrer">
                   {title}
                 </a>
               </p>

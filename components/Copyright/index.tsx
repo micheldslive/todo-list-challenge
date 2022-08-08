@@ -1,21 +1,21 @@
-import Image from "next/image"
-import LogoFooter from "assets/images/logo-challenge-white.png"
-import ReactTyped from "react-typed"
-import { positions } from "mocks"
+import LogoFooter from 'assets/images/logo-challenge-white.png'
+import { positions } from 'mocks'
+import Image from 'next/image'
+import ReactTyped from 'react-typed'
 
 export const Copyright = () => {
   return (
-    <div className="sm:flex-col sm:justify-start flex items-center gap-x-5">
+    <div className="flex items-center gap-x-5 sm:flex-col sm:justify-start">
       <div>
-        <Image src={LogoFooter} width={45} height={35} />
+        <Image src={LogoFooter} width={45} height={35} alt="Logo Footer" />
       </div>
-      <div className="sm:w-full flex justify-start flex-col sm:justify-start sm:items-start">
-        <p className="sm:text-sm font-arial text-lg text-white">
-        Todo List Challenge &copy; 2022
+      <div className="flex flex-col justify-start sm:w-full sm:items-start sm:justify-start">
+        <p className="font-arial text-lg text-white sm:text-sm">
+          Todo List Challenge &copy; 2022
         </p>
-        <p className="sm:text-sm font-arial text-lg text-white">
+        <p className="font-arial text-lg text-white sm:text-sm">
           <span className="text-tertiary">
-            By Michel Domingos - {" "}
+            By Michel Domingos -{' '}
             <ReactTyped
               strings={positions}
               typeSpeed={80}

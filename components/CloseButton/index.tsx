@@ -1,5 +1,5 @@
-import { useTodoList } from "context"
-import { GrClose } from "react-icons/gr"
+import { useTodoList } from 'context'
+import { GrClose } from 'react-icons/gr'
 
 export const CloseButton = () => {
   const { setOpenModal } = useTodoList()

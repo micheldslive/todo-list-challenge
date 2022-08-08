@@ -1,12 +1,12 @@
-import { NavBar } from "components"
-import { Logo } from "components"
-import { SearchBar } from "components"
-import { memo } from "react"
+import { Logo } from 'components/Logo'
+import { NavBar } from 'components/NavBar'
+import { SearchBar } from 'components/SearchBar'
+import { memo } from 'react'
 
 const Header = () => {
   return (
-    <header className="md:px-4 bg-white py-5 px-6 sticky top-0 w-full bg-white z-20">
-      <div className="flex flex-row items-center justify-between flex-wrap gap-4">
+    <header className="sticky top-0 z-20 w-full bg-white py-5 px-6 md:px-4">
+      <div className="flex flex-row flex-wrap items-center justify-between gap-4">
         <Logo />
         <NavBar />
         <SearchBar />
