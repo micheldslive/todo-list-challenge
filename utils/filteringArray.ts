@@ -1,4 +1,4 @@
-import { ITodosList, IUsersList } from "core/types"
+import { ITodosList, IUsersList } from 'core/types'
 
 export const filteringUsers = (users: IUsersList[], search: string) => {
   return users.filter(({ name }) => name.toLocaleLowerCase().includes(search))

@@ -1,12 +1,11 @@
-import axios from "axios";
-import { IUsersList, IToDoListResponse, ITodosList } from "core/types"
-import { ErrorHandler } from "core/handler/errorHanlder"
+import axios from 'axios'
+import { ErrorHandler } from 'core/handler/errorHanlder'
+import { IToDoListResponse, ITodosList, IUsersList } from 'core/types'
 
 export const ToDoListAPI = () => {
-
   const api = axios.create({
-    baseURL: "https://jsonplaceholder.typicode.com",
-  });
+    baseURL: 'https://jsonplaceholder.typicode.com'
+  })
 
   const ListUsers = async (): Promise<IUsersList[]> => {
     const { errorHandler } = new ErrorHandler()
@@ -32,11 +31,11 @@ export const ToDoListAPI = () => {
     const [error, response] = await errorHandler(
       api.patch(`/todos/${todoId}`, {
         body: JSON.stringify({
-          completed,
+          completed
         }),
         headers: {
-          "Content-type": "application/json charset=UTF-8",
-        },
+          'Content-type': 'application/json charset=UTF-8'
+        }
       })
     )
 
@@ -48,9 +47,7 @@ export const ToDoListAPI = () => {
 
   const DeleteToDoItem = async (todoId: number): Promise<ITodosList[]> => {
     const { errorHandler } = new ErrorHandler()
-    const [error, response] = await errorHandler(
-      api.delete(`/todos/${todoId}`)
-    )
+    const [error, response] = await errorHandler(api.delete(`/todos/${todoId}`))
 
     if (error) throw new Error(error.message)
     return response.status
@@ -61,11 +58,11 @@ export const ToDoListAPI = () => {
     const [error, response] = await errorHandler(
       api.post(`/todos/`, {
         body: JSON.stringify({
-          body,
+          body
         }),
         headers: {
-          "Content-type": "application/json charset=UTF-8",
-        },
+          'Content-type': 'application/json charset=UTF-8'
+        }
       })
     )
 
@@ -78,6 +75,6 @@ export const ToDoListAPI = () => {
     ToDosListUserId,
     ToDosListUpdate,
     DeleteToDoItem,
-    CreateToDoList,
+    CreateToDoList
   }
 }
